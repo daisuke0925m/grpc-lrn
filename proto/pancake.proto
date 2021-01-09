@@ -26,3 +26,25 @@ message Pancake {
 	float technical_score = 3;
 	google.protobuf.Timestamp create_time = 15
 }
+
+message Report{
+	message BakeCount{
+		Pancage.Menu menu = 1;
+		int32 count = 2;
+	}
+	repeated BakeCount bake_counts = 1;
+}
+
+message BakeRequest {
+	Pancake.Menu menu = 1;
+}
+
+message BakeResponse {
+	Pancake pancake = 1;
+}
+
+message ReportRequest {}
+
+message ReportResponse {
+	Report report = 1;
+}
