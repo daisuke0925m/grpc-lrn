@@ -3,4 +3,9 @@ package pancake.baker
 
 option go_package = "gen/api";
 
+import "google/protobuf/timestamp.proto";
 
+service PancakeBakerService {
+	rpc Bake(BakeRequest) returns (BakeResponse) {}
+	rpc Report(ReportRequest) returns (ReportResponse) {}
+}
