@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 
+	"github.com/golang/protobuf/ptypes/timestamp"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -44,4 +45,25 @@ var Pancake_Menu_value = map[string]int32{
 	"MIX_BERRY":         4,
 	"BAKED_MARSHMALLOW": 5,
 	"SPICY_CURRY":       6,
+}
+
+type Pancake struct {
+	// シェフの名前
+	ChefName string `protobuf:"bytes,1,opt,name=chef_name,json=chefName,proto3" json:"chef_name,omitempty"`
+	// メニュー
+	Menu Pancake_Menu `protobuf:"varint,2,opt,name=menu,proto3,enum=pancake.baker.Pancake_Menu" json:"menu,omitempty"`
+	// 焼き具合を表すスコアです(0-0.9)
+	TechnicalScore float32 `protobuf:"fixed32,3,opt,name=technical_score,json=technicalScore,proto3" json:"technical_score,omitempty"`
+	// 焼いた日時
+	CreateTime           *timestamp.Timestamp `protobuf:"bytes,15,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *Pancake) Reset()         { *m = Pancake{} }
+func (m *Pancake) String() string { return proto.CompactTextString(m) }
+func (*Pancake) ProtoMessage()    {}
+func (*Pancake) Descriptor() ([]byte, []int) {
+	return fileDescriptor_bd84accc06629c9d, []int{0}
 }
