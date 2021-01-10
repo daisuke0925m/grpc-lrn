@@ -25,3 +25,23 @@ const (
 	Pancake_BAKED_MARSHMALLOW Pancake_Menu = 5
 	Pancake_SPICY_CURRY       Pancake_Menu = 6
 )
+
+var Pancake_Menu_name = map[int32]string{
+	0: "UNKNOWN",
+	1: "CLASSIC",
+	2: "BANANA_AND_WHIP",
+	3: "BACON_AND_CHEESE",
+	4: "MIX_BERRY",
+	5: "BAKED_MARSHMALLOW",
+	6: "SPICY_CURRY",
+}
+
+var Pancake_Menu_value = map[string]int32{
+	"UNKNOWN":           0,
+	"CLASSIC":           1,
+	"BANANA_AND_WHIP":   2,
+	"BACON_AND_CHEESE":  3,
+	"MIX_BERRY":         4,
+	"BAKED_MARSHMALLOW": 5,
+	"SPICY_CURRY":       6,
+}
