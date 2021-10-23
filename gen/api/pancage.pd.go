@@ -66,4 +66,5 @@ func (m *Pancake) String() string { return proto.CompactTextString(m) }
 func (*Pancake) ProtoMessage()    {}
 func (*Pancake) Descriptor() ([]byte, []int) {
 	return fileDescriptor_bd84accc06629c9d, []int{0}
+
 }
